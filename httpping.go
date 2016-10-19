@@ -1,16 +1,16 @@
 package main
 
 import (
-	"time"
 	"flag"
-	 "log"
+	"log"
 	"net/http"
+	"time"
 )
 
 func main() {
 
- 	urlPtr := flag.String("u", "http://example.com/", "url to perform GET ping")
- 	secPtr := flag.Int("s", 3600, "# of seconds between pings")
+	urlPtr := flag.String("u", "http://example.com/", "url to perform GET ping")
+	secPtr := flag.Int("s", 3600, "# of seconds between pings")
 	flag.Parse()
 
 	//TODO flags validation
@@ -21,7 +21,7 @@ func main() {
 			log.Println("Error:", err)
 		}
 		log.Println("Response: ", resp.Status)
-				
+
 		time.Sleep(time.Duration(*secPtr) * time.Second)
 	}
 }
